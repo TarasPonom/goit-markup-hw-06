@@ -458,7 +458,10 @@ img {
 .clients-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: 30px;
 }
 .clients-link {
   width: 170px;
@@ -684,7 +687,7 @@ img {
 .footer-subscribe {
   width: 570px;
   height: 86px;
-  margin-left: 93px;
+  margin-left: auto;
 }
 .subscribe-icon {
   fill: var(--second-button-text-color);
@@ -784,7 +787,8 @@ img {
   outline: none;
   transition: border-color var(--animation-duration) var(--timing-function);
 }
-.modal-user-text:focus {
+.modal-user-text:focus,
+.modal-user-text:hover {
   border-color: var(--accent-color);
 }
 
@@ -841,6 +845,7 @@ img {
 }
 
 .modal-form-field {
+  margin-bottom: 10px;
   position: relative;
 }
 .modal-icon {
@@ -861,7 +866,7 @@ img {
   box-sizing: border-box;
   border-radius: 4px;
   outline: none;
-  margin-bottom: 10px;
+
   background-color: transparent;
   padding-left: 36px;
   padding-right: 16px;
@@ -878,6 +883,11 @@ img {
   fill: var(--accent-color);
   border-color: var(--accent-color);
 }
+.modal-privasy {
+  color: var(--accent-color);
+  margin-left: 5px;
+}
+
 .modal-privacy-text span {
   width: 16px;
   height: 15px;
@@ -892,10 +902,15 @@ img {
     border-color var(--animation-duration) var(--timing-function);
 }
 .icon-check {
-  fill: white;
+  fill: var(--second-button-text-color);
 }
 .modal-check:checked + .modal-privacy-text span {
   background-color: var(--accent-color);
-  border: none;
+  border: transparent;
   fill: var(--second-button-text-color);
+}
+
+.modal-check:focus + .modal-privacy-text span,
+.modal-check:hover + .modal-privacy-text span {
+  border-color: var(--accent-color);
 }
